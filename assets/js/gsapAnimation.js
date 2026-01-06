@@ -694,16 +694,16 @@
         loader();
     });
 
-    $(window).on("load", function () {
-        const hash = window.location.hash;
-        if (hash && $(hash).length) {
-            setTimeout(() => {
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: hash,
-                    ease: "power2.out",
-                });
-            }, 800);
-        }
-    });
+    // $(window).on("load", function () {
+    //     const hash = window.location.hash;
+    //     if (hash && $(hash).length) {
+    //         setTimeout(() => {
+    //             gsap.to(window, {
+    //                 duration: 1,
+    //                 scrollTo: hash,
+    //                 ease: "power2.out",
+    //             });
+    //         }, 800);
+    //     }
+    // });
 })(jQuery);
