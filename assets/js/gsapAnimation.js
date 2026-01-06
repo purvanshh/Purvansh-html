@@ -21,8 +21,8 @@
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: $el,
-                        start: "top 100%",
-                        end: "bottom 95%",
+                        start: "top 85%",
+                        end: "bottom 40%",
                         scrub: true,
                         toggleActions: "play none none reverse",
                     },
