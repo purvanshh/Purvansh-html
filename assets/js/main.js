@@ -226,6 +226,41 @@
         });
     };
 
+    /* Project Mouse Follow
+    -------------------------------------------------------------------------*/
+    var projectMouseFollow = function () {
+        var $images = $(".image");
+
+        $images.each(function () {
+            var $this = $(this);
+            var $overlay = $this.find(".hover-overlay");
+
+            if ($overlay.length > 0) {
+                // Initial placement
+                $overlay.css({
+                    "transform": "translate(-50%, -50%) scale(0.8)"
+                });
+
+                $this.on("mousemove", function (e) {
+                    var offset = $this.offset();
+                    var x = e.pageX - offset.left;
+                    var y = e.pageY - offset.top;
+
+                    // Update position
+                    $overlay.css({
+                        "transform": "translate(" + x + "px, " + y + "px) translate(-50%, -50%) scale(1)"
+                    });
+                });
+
+                $this.on("mouseleave", function () {
+                    $overlay.css({
+                        "transform": "translate(-50%, -50%) scale(0.8)"
+                    });
+                });
+            }
+        });
+    };
+
     // Dom Ready
     $(function () {
         infiniteSlide();
@@ -236,5 +271,6 @@
         counterOdo();
         openMbMenu();
         clickActive();
+        projectMouseFollow();
     });
 })(jQuery);
